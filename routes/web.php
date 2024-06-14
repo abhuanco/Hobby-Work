@@ -1,15 +1,10 @@
 <?php
 
+use App\Http\Controllers\Auth\DashboardController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/version', function () {
-    phpinfo();
-});
 
 Auth::routes();
-
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index']);
+Route::resource('dashboard', DashboardController::class);
