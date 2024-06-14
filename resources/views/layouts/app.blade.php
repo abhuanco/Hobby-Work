@@ -49,8 +49,8 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('dashboard.index') }}">
-                                        {{ __('Dashboard') }}
+                                    <a class="dropdown-item" href="@if(auth()->user()->getRoleName() === 'admin') {{route('dashboard.index')}} @else {{route('client.index')}}  @endif">
+                                        {{ __('Movies') }}
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}

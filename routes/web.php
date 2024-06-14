@@ -8,3 +8,4 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 Route::get('/', [HomeController::class, 'index']);
 Route::resource('dashboard', DashboardController::class);
+Route::resource('client', \App\Http\Controllers\Auth\ClientController::class);
